@@ -14,7 +14,7 @@ export default function Proyectos() {
         {
             id: 1,
             title: "este es el primer video",
-            content: "",
+            content: " esta es la descripcion del video",
             src: "https://drive.google.com/file/d/1SXQGLUy9Azl_jHxOpedxAb0fuS3lwch_/view?usp=drive_link",
         },
         {

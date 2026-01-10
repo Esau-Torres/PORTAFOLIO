@@ -1,0 +1,21 @@
+/* Fondo general de la página para que coincida con el tema oscuro */
+body {
+    background-color: #0B0F19;
+    /* Color extraído de tu imagen */
+    color: #e0e0e0;
+}
+
+/* Efecto Hover para los links del Navbar */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #ffffff !important;
+    }
+}
+
+/* Ajustes para el Footer */
+footer a.hover-white:hover {
+    color: #fff !important;
+    text-decoration: underline !important;
+}

@@ -1,0 +1,21 @@
+{
+    "Navbar": {
+        "home": "Inicio",
+        "about": "Sobre Mí",
+        "projects": "Proyectos",
+        "download_cv": "Descargar CV",
+        "txt1": "🌐 idioma"
+    },
+    "Hero": {
+        "title": "Mi Portafolio",
+        "subtitle": "Soluciones Full Stack"
+    },
+    "Footer": {
+        "description": " Desarrollador Full Stack especializado en crear soluciones digitales robustas y escalables para el sector empresarial.",
+        "txt1": "Inicio",
+        "txt2": "Sobre Mí",
+        "txt3": "Proyectos",
+        "txt4": "contacto",
+        "txt5": "Todos los derechos reservados"
+    }
+}

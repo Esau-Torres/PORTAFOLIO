@@ -1,0 +1,21 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "download_cv": "Download CV",
+        "txt1": "🌐 languaje"
+    },
+    "Hero": {
+        "title": "My Portfolio",
+        "subtitle": "Full Stack Solutions"
+    },
+    "Footer": {
+        "description": "Full Stack Developer specializing in creating robust and scalable digital solutions for the business sector.",
+        "txt1": "Home",
+        "txt2": "About",
+        "txt3": "Projects",
+        "txt4": "Contact",
+        "txt5": "All rights reserved"
+    }
+}

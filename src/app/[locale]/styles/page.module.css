@@ -1,0 +1,463 @@
+.bloque1 {
+    background-color: #0B0F19;
+    border-radius: 0 0 50px 50px;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 3rem;
+    box-shadow: 0 15px 0 #434341, 0 30px 0 #565654;
+}
+
+/* --- ESTILOS DEL CÍRCULO --- */
+.circulo1 {
+    width: 10rem;
+    /* Tamaño original para PC */
+    height: 8rem;
+    /* Tamaño original para PC */
+    background-color: #0B0F19;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 15px 0 #434341, 0 30px 0 #565654;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    /* Flecha grande en PC */
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.circulo1::after {
+    position: absolute;
+    content: '↓';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- ESTILOS DE TEXTO --- */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c7c7c6;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.desciption {
+    font-size: 1.2rem;
+    color: #b4b4b3;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: left;
+}
+
+.content {
+    color: #a1a1a0;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.image-one {
+    filter: drop-shadow(20px 0 7px #d6dcec);
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVIDAD (MÓVIL) --- */
+@media (max-width: 768px) {
+    .bloque1 {
+        padding-bottom: 2rem;
+        border-radius: 0 0 30px 30px;
+    }
+
+    /* 1. Reducir esfera */
+    .circulo1 {
+        width: 6rem;
+        height: 4.8rem;
+        font-size: 2rem;
+        box-shadow: 0 8px 0 #434341, 0 16px 0 #565654;
+    }
+
+    /* 2. Adaptar texto */
+    .title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .desciption {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        font-size: 0.9rem;
+        /* Texto un poco más pequeño */
+    }
+
+    /* Ajuste de imagen en móvil */
+    .image-one {
+        width: 80% !important;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .btn-space {
+        margin-bottom: 1rem;
+    }
+}
+
+/* bloque 2 contenido*/
+
+.bloque2 {
+    background-color: #30302e;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    z-index: 1;
+}
+
+/* EL CONTENEDOR PRINCIPAL cards*/
+.cardCustom {
+    position: relative;
+    background-color: transparent;
+    padding: 3.5rem 2rem 2rem 2rem;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    height: 85%;
+    transition: transform 0.3s ease;
+}
+
+.cardCustom:hover {
+    transform: translateY(-5px);
+}
+
+.cardCustom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 40px);
+    height: 60%;
+    border-radius: 6px;
+    border-top: 2px solid #ffffff;
+    border-right: 4px solid #fdfdfd;
+    border-top-right-radius: 30px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.cardCustom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: calc(100% - 7rem);
+    border-radius: 6px;
+    border-bottom: 4px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom-left-radius: 30px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.cardCustom:hover::before,
+.cardCustom:hover::after {
+    border-color: #a1a1a0;
+}
+
+.iconBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -35%);
+    width: 65px;
+    height: 65px;
+    background-color: #7b7b7a;
+    border: 2px solid #fcfcfc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.cardCustom:hover .iconBox {
+    background-color: #1c2533;
+    color: #d9d9d9;
+    border-color: #d9d9d9;
+    box-shadow: 0 0 20px rgba(228, 229, 138, 0.6);
+}
+
+.cardTitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #c7c7c6;
+}
+
+.cardText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.95rem;
+    color: #a1a1a0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cardLink {
+    text-decoration: none;
+    font-weight: bold;
+    color: #727271;
+    position: relative;
+    display: inline-block;
+}
+
+.cardLink::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #7b7b7a;
+    transition: width 0.3s;
+}
+
+.cardCustom:hover .cardLink::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .cardCustom {
+        margin-left: 0.8rem;
+        padding: 2.5rem 0.8rem 1rem 0.8rem;
+    }
+
+    .iconBox {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        transform: translate(-40%, -40%);
+    }
+
+    .cardTitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .cardText {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .cardCustom::before {
+        width: calc(100% - 20px);
+        height: 50%;
+    }
+
+    .cardCustom::after {
+        width: 80%;
+        height: calc(100% - 4rem);
+    }
+
+    .cardLink {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* Bloqeue 3 */
+
+.bloque3 {
+    background-color: #30302e;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.imageContent {
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 5px 40px #000000);
+    transition: transform 0.3s ease;
+}
+
+.imageContent:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+    .imageContent {
+        width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .block1 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .imageContent {
+        width: 900px;
+    }
+}
+
+/*bloque 4*/
+.bloque4 {
+    background-color: #0B0F19;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* --- NUEVO DISEÑO DE CARD ELEGANTE (SIN ICONO) --- */
+.cardCustom2 {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: none;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta completa */
+.cardCustom2:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.cardCustom2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px; 
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px 12px 0 0;
+    -webkit-mask-image: linear-gradient(to right, black 30px, transparent 30px, transparent calc(100% - 30px), black calc(100% - 30px));
+    mask-image: linear-gradient(to right, black 30px, transparent 30px, transparent calc(100% - 30px), black calc(100% - 30px));
+    transition: all 0.4s ease;
+}
+
+.cardCustom2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 12px 12px;
+    -webkit-mask-image: linear-gradient(to right, black 30px, transparent 30px, transparent calc(100% - 30px), black calc(100% - 30px));
+    mask-image: linear-gradient(to right, black 30px, transparent 30px, transparent calc(100% - 30px), black calc(100% - 30px));
+    transition: all 0.4s ease;
+}
+
+/* Al hacer hover, las esquinas crecen y cambian de color */
+.cardCustom2:hover::before,
+.cardCustom2:hover::after {
+    height: 50px;
+    border-color: #ffffff; 
+    -webkit-mask-image: linear-gradient(to right, black 50px, transparent 50px, transparent calc(100% - 50px), black calc(100% - 50px));
+    mask-image: linear-gradient(to right, black 50px, transparent 50px, transparent calc(100% - 50px), black calc(100% - 50px));
+}
+
+/* Título del certificado */
+.cardcertificado {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* --- CONTENEDOR DE LA IMAGEN --- */
+.imageContainer {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Marco sutil a la foto */
+}
+
+.image-cerificate {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+/* Zoom suave en la imagen al hacer hover */
+.imageContainer:hover .image-cerificate {
+    transform: scale(1.08);
+}
+
+/* Capa oscura con texto "Ver Certificado" */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 15, 25, 0.7); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px); /* Un toque borroso elegante */
+}
+
+.overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.imageContainer:hover .overlay {
+    opacity: 1;
+}
+
+.imageContainer:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* Ajustes Responsive */
+@media (max-width: 767px) {
+    .cardcertificado {
+        font-size: 1.3rem;
+    }
+    .cardCustom2 {
+        padding: 1.5rem;
+    }
+}

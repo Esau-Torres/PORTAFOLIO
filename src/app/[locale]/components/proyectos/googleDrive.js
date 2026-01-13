@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons'; // Asegúrate de tener este icono
+import { faPlay } from '@fortawesome/free-solid-svg-icons'; 
+import { useTranslations } from 'use-intl';
 
 export default function GoogleVideo({ src, title = "Video", showThumbnail = false }) {
-    
+    const t = useTranslations('components.proyectos');
     const getYouTubeId = (url) => {
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
         const match = url.match(regExp);
@@ -12,7 +12,7 @@ export default function GoogleVideo({ src, title = "Video", showThumbnail = fals
 
     const videoId = getYouTubeId(src);
 
-    if (!videoId) return <p className="text-danger">Enlace inválido</p>;
+    if (!videoId) return <p className="text-danger">{t('ttl1')}</p>;
 
     if (showThumbnail) {
         return (

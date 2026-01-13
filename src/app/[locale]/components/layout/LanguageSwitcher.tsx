@@ -5,19 +5,22 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslations } from 'next-intl';
 import style from '../../styles/layout.module.css';
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ onLanguageSelect }: { onLanguageSelect?: (locale: string) => void }) {
     const t = useTranslations('Navbar');
     const router = useRouter();
-    const pathname = usePathname(); // Ej: /es/about
+    const pathname = usePathname();
 
     const handleLanguageChange = (newLocale: string) => {
-        // Reemplaza el idioma actual en la URL por el nuevo
-        // /es/about -> /en/about
         const pathParts = pathname.split('/');
         pathParts[1] = newLocale;
         const newPath = pathParts.join('/');
 
         router.push(newPath);
+        router.refresh();
+
+        if (onLanguageSelect) {
+            onLanguageSelect(newLocale);
+        }
     };
 
     return (

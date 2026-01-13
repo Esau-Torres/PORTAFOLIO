@@ -2,11 +2,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocation, faMailBulk, faJournalWhills } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTranslations } from 'next-intl'; 
+import { useTranslations, useLocale } from 'next-intl'; 
 import Link from 'next/link';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const locale = useLocale();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -26,9 +27,9 @@ export default function Footer() {
                     <Col md={4}>
                         <h6 className="text-white fw-bold mb-3">Navegación</h6>
                         <ul className="list-unstyled d-flex flex-column gap-2">
-                            <li><Link href="/" className="text-decoration-none text-secondary hover-white">{t('txt1')}</Link></li>
-                            <li><Link href="/es/about" className="text-decoration-none text-secondary hover-white">{t('txt2')}</Link></li>
-                            <li><Link href="/es/proyectos" className="text-decoration-none text-secondary hover-white">{t('txt3')}</Link></li>
+                            <li><Link href={`/${locale}`} className="text-decoration-none text-secondary hover-white">{t('txt1')}</Link></li>
+                            <li><Link href={`/${locale}/about`} className="text-decoration-none text-secondary hover-white">{t('txt2')}</Link></li>
+                            <li><Link href={`/${locale}/proyectos`} className="text-decoration-none text-secondary hover-white">{t('txt3')}</Link></li>
                         </ul>
                     </Col>
 
@@ -37,7 +38,11 @@ export default function Footer() {
                         <h6 className="text-white fw-bold mb-3">{t('txt4')}</h6>
                         <ul className="list-unstyled text-secondary">
                             <li className="mb-2"><FontAwesomeIcon icon={faLocation} style={{color: 'rgba(138, 136, 136, 0.72)'}}/> Santa Ana, El Salvador</li>
-                            <li className="mb-2"><FontAwesomeIcon icon={faMailBulk} style={{color: 'rgba(138, 136, 136, 0.72)'}}/> davidesau140@gmail.com</li>
+                            <li className="mb-2">
+                                <a href="mailto:davidesau140@gmail.com" style={{textDecoration: 'none', color: 'rgba(138, 136, 136, 0.72)'}}>
+                                    <FontAwesomeIcon icon={faMailBulk} style={{color: 'rgba(138, 136, 136, 0.72)'}}/> davidesau140@gmail.com
+                                </a>
+                            </li>
                             <li><FontAwesomeIcon icon={faJournalWhills} style={{color: 'rgba(138, 136, 136, 0.72)'}}/> <a href="linkedin.com/in/esaú-torres-516b10306" className="text-secondary text-decoration-none">LinkedIn</a></li>
                         </ul>
                     </Col>

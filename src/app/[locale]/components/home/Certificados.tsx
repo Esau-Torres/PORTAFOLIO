@@ -4,8 +4,11 @@ import { useState } from 'react';
 import styles from "../../styles/page.module.css";
 import { Container, Modal } from 'react-bootstrap';
 import Image from 'next/image';
+import { useTranslations } from 'use-intl';
 
 export default function Certificados() {
+
+    const t = useTranslations();
     // 1. ESTADOS PARA EL MODAL
     const [showModal, setShowModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
@@ -14,17 +17,17 @@ export default function Certificados() {
     const certificados = [
         {
             id: 1,
-            title: "Hacker Ético",
+            title: t('components.certificados.ttl1'),
             src: "/images/certificado1.png",
         },
         {
             id: 2,
-            title: "Ciberseguridad",
+            title: t('components.certificados.ttl2'),
             src: "/images/certificado2.png",
         },
         {
             id: 3,
-            title: "Git & Github",
+            title: t('components.certificados.ttl3'),
             src: "/images/certificado3.png",
         }
     ];
@@ -43,7 +46,7 @@ export default function Certificados() {
     return (
         <section className={styles.bloque4}>
             <Container>
-                <h1 className={`${styles.title} text-center mb-5 mt-4 fw-bold`}>Mis Certificados</h1>
+                <h1 className={`${styles.title} text-center mb-5 mt-4 fw-bold`}>{t('components.certificados.ttl4')}</h1>
 
                 <div className="row g-4">
                     {certificados.map((cert) => (
@@ -62,7 +65,7 @@ export default function Certificados() {
                                         height={300}
                                         className={`${styles['image-cerificate']} img-fluid`}/>
                                     <div className={styles.overlay}>
-                                        <span>Ver Certificado 🔍</span>
+                                        <span>{t('components.certificados.ttl5')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +85,7 @@ export default function Certificados() {
                         {selectedImage && (
                             <Image
                                 src={selectedImage}
-                                alt="Vista previa"
+                                alt={t('components.certificados.ttl6')}
                                 width={800}
                                 height={600}
                                 style={{ width: '100%', height: 'auto', borderRadius: '10px' }}

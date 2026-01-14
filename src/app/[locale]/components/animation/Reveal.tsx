@@ -10,15 +10,14 @@ interface RevealProps {
 
 export default function Reveal({ children, width = "fit-content", delay = 0.25 }: RevealProps) {
     const ref = useRef(null);
-    // "once: false" permite que se repita la animación al subir y bajar
-    const isInView = useInView(ref, { once: false, amount: 0.3 }); 
+    const isInView = useInView(ref, { once: true, amount: 0.5 }); // 3
     const mainControls = useAnimation();
 
     useEffect(() => {
         if (isInView) {
             mainControls.start("visible");
         } else {
-            mainControls.start("hidden"); // Esto hace que se "borre" al salir
+            mainControls.start("hidden");
         }
     }, [isInView, mainControls]);
 
@@ -31,7 +30,7 @@ export default function Reveal({ children, width = "fit-content", delay = 0.25 }
                 }}
                 initial="hidden"
                 animate={mainControls}
-                transition={{ duration: 0.6, delay: delay, ease: "easeOut" }} // Suavizado elegante
+                transition={{ duration: 0.6, delay: delay, ease: "easeOut" }} 
             >
                 {children}
             </motion.div>

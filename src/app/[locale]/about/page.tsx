@@ -133,7 +133,7 @@ export default function About() {
                                 className="container container-fluid h-100 d-flex justify-content-center align-content-center"
                                 initial={{ opacity: 0, y: 50, rotate: -5 }}
                                 whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                                viewport={{ once: false }}
+                                viewport={{ once: true, amount: 0.2 }}
                                 transition={{ duration: 1, delay: 0.2, type: "spring" }}>
                                 <Image src="/images/about4.png"
                                     alt="imagen de about"

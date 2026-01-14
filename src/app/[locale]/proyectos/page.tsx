@@ -20,6 +20,34 @@ interface Project {
     content: string;
     src: string;
 }
+ const cardAnim = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) }
+        }
+    };
+
+    interface TechCardProps {
+        icon: IconDefinition;
+        title: string;
+        children: React.ReactNode;
+    }
+
+    const TechCardItem = ({ icon, title, children }: TechCardProps) => (
+        <motion.div className="col-12 col-lg-6 mb-4" variants={cardAnim}>
+            <div className={s1.techCard}>
+                <div className={s1.techIcon}>
+                    <FontAwesomeIcon icon={icon} />
+                    <h3 className={s2.desciption}>{title}</h3>
+                </div>
+                <p className={s2.content}>
+                    {children}
+                </p>
+            </div>
+        </motion.div>
+    );
 
 export default function Proyectos() {
     const t = useTranslations('proyectos');
@@ -59,35 +87,6 @@ export default function Proyectos() {
         setShowModal(false);
         setSelectedProject(null);
     };
-
-    const cardAnim = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) }
-        }
-    };
-
-    interface TechCardProps {
-        icon: IconDefinition;
-        title: string;
-        children: React.ReactNode;
-    }
-
-    const TechCardItem = ({ icon, title, children }: TechCardProps) => (
-        <motion.div className="col-12 col-lg-6 mb-4" variants={cardAnim}>
-            <div className={s1.techCard}>
-                <div className={s1.techIcon}>
-                    <FontAwesomeIcon icon={icon} />
-                    <h3 className={s2.desciption}>{title}</h3>
-                </div>
-                <p className={s2.content}>
-                    {children}
-                </p>
-            </div>
-        </motion.div>
-    );
 
     return (
         <>

@@ -70,7 +70,7 @@
 }
 
 /* --- MODAL ESTILOS --- */
-.modalCustom :global(.modal-content) {
+:global(.modalCustom) :global(.modal-content) {
     background-color: #1a1f2e; 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -185,6 +185,7 @@
         min-height: 250px;
         padding: 0;
     }
+    
 }
 
 

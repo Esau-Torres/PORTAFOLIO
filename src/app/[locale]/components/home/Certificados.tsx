@@ -82,6 +82,7 @@ export default function Certificados() {
                     onHide={handleCloseModal}
                     centered
                     size="lg"
+                    backdropClassName={styles.solidBackdrop}
                     className={styles.modalCustom}>
                     <Modal.Header closeButton className="border-0 pb-0" />
                     <Modal.Body className="text-center p-4">

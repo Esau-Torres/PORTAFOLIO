@@ -10,10 +10,6 @@ export default function ScrollText({ children, className }) {
         offset: ["start end", "end start"]
     });
 
-    // Transformamos el progreso del scroll (0 a 1) en valores de opacidad y posición
-    // 0% scroll -> Opacidad 0 (Entrando)
-    // 50% scroll -> Opacidad 1 (Centro de pantalla)
-    // 100% scroll -> Opacidad 0 (Saliendo por arriba)
     const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
     // Efecto de movimiento suave (Parallax) y desenfoque al salir

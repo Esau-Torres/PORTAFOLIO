@@ -5,7 +5,6 @@ import styles from "../../styles/About.module.css";
 import AscendWords from '../animation/AscendWords'; 
 import StaggerContainer from '../animation/StaggerContainer'; 
 
-// Definimos la variante "Pop" aquí mismo para encapsularla
 const tagPopVariant: Variants = {
   hidden: { opacity: 0, scale: 0.5 },
   visible: { 

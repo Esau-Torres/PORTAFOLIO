@@ -17,7 +17,7 @@ export default function AnimatedButton({ children, className, onClick, delay = 0
             style={{ display: 'inline-block' }}
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ 
                 type: "spring", 
                 stiffness: 260, 
@@ -25,7 +25,6 @@ export default function AnimatedButton({ children, className, onClick, delay = 0
                 delay: delay
             }}
         >
-            {/* 2. CAPA INTERNA: Solo controla el Hover/Click (Instantáneo) */}
             <motion.button
                 className={`${className} position-relative`}
                 onClick={handleClick}
@@ -34,7 +33,7 @@ export default function AnimatedButton({ children, className, onClick, delay = 0
                     scale: 1.1, 
                     boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)",
                     zIndex: 1,
-                    transition: { duration: 0.2 } // Reacción rápida al entrar
+                    transition: { duration: 0.2 }
                 }}
                 
                 whileTap={{ scale: 0.95 }}

@@ -13,12 +13,12 @@ export const containerVariants: Variants = {
 };
 
 export const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(5px)" }, // Agregué un blur sutil
+  hidden: { opacity: 0, y: 30, filter: "blur(5px)" },
   visible: { 
     opacity: 1, 
     y: 0, 
     filter: "blur(0px)",
-    transition: { duration: 0.5, ease: "easeOut" } // Quitamos el rebote (spring) para más elegancia
+    transition: { duration: 0.5, ease: "easeOut" }
   }
 };
 
@@ -33,7 +33,7 @@ export default function StaggerContainer({ children, className }: StaggerProps) 
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       className={className}
     >
       {children}

@@ -10,8 +10,7 @@ interface Props {
 
 export default function AscendWords({ text, className, delay = 0 }: Props) {
     const ref = useRef(null);
-    // Se repite al salir y entrar
-    const isInView = useInView(ref, { once: false, amount: 0.5 });
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
     const controls = useAnimation();
 
     useEffect(() => {
@@ -40,7 +39,7 @@ export default function AscendWords({ text, className, delay = 0 }: Props) {
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: [0.33, 1, 0.68, 1], // Curva suave "premium"
+                ease: [0.33, 1, 0.68, 1],
             },
         },
     };

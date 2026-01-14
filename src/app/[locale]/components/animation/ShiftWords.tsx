@@ -10,7 +10,7 @@ interface Props {
 
 export default function ShiftWords({ text, className, delay = 0.2 }: Props) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.5 });
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
     const controls = useAnimation();
 
     useEffect(() => {

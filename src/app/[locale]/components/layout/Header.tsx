@@ -60,10 +60,12 @@ export default function Header() {
                     <div className={`${style['actions-container']} ms-lg-4 d-flex flex-column-reverse flex-lg-row align-items-center gap-4 mt-5 mt-lg-0`}>
                         <LanguageSwitcher onLanguageSelect={closeMenu} />
 
+                        <a href={`/docs/CV.pdf`} download="Esau_Torres_CV.pdf" target="_blank" rel="noopener noreferrer">
                         <AnimatedButton className={`${style['btn-neon-pg']} btn btn-black rounded-pill fw-bold  px-4 py-2 py-lg-2`} delay={0.1} onClick={() => { closeMenu }}>
                             {t('download_cv')}
                         </AnimatedButton>
-
+                        </a>
+                        
                     </div>
                 </Navbar.Collapse>
             </Container>

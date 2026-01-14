@@ -32,7 +32,7 @@
 
 .circulo1::after {
     position: absolute;
-    content: '↓';
+    content: '↯';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -89,11 +89,13 @@
     .title {
         font-size: 1.8rem;
         text-align: center;
+        justify-content: center;
     }
 
     .desciption {
         font-size: 1rem;
         text-align: center;
+        justify-content: center;
         margin-bottom: 1rem;
     }
 

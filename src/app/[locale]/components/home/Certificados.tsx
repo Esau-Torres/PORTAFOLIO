@@ -5,6 +5,9 @@ import styles from "../../styles/page.module.css";
 import { Container, Modal } from 'react-bootstrap';
 import Image from 'next/image';
 import { useTranslations } from 'use-intl';
+import AscendWords from '../animation/AscendWords';
+import StaggerContainer, { cardVariants } from '../animation/StaggerContainer';
+import { motion } from "framer-motion";
 
 export default function Certificados() {
 
@@ -33,7 +36,7 @@ export default function Certificados() {
     ];
 
     // 3. FUNCIONES
-    const handleOpenModal = (imageSrc:string) => {
+    const handleOpenModal = (imageSrc: string) => {
         setSelectedImage(imageSrc);
         setShowModal(true);
     };
@@ -46,14 +49,14 @@ export default function Certificados() {
     return (
         <section className={styles.bloque4}>
             <Container>
-                <h1 className={`${styles.title} text-center mb-5 mt-4 fw-bold`}>{t('components.certificados.ttl4')}</h1>
+                <AscendWords text={t('components.certificados.ttl4')} className={`${styles.title} justify-content-center mb-5 mt-4 fw-bold`} />
 
-                <div className="row g-4">
+                <StaggerContainer className="row g-4">
                     {certificados.map((cert) => (
-                        <div key={cert.id} className="col-12 col-md-4">
+                        <motion.div key={cert.id} className="col-12 col-md-4" variants={cardVariants}>
                             {/* CARD LIMPIA SIN ICONO */}
                             <div className={styles.cardCustom2}>
-                                
+
                                 <h3 className={styles.cardcertificado}>{cert.title}</h3>
 
                                 <div
@@ -63,15 +66,15 @@ export default function Certificados() {
                                         src={cert.src} alt={cert.title}
                                         width={500}
                                         height={300}
-                                        className={`${styles['image-cerificate']} img-fluid`}/>
+                                        className={`${styles['image-cerificate']} img-fluid`} />
                                     <div className={styles.overlay}>
                                         <span>{t('components.certificados.ttl5')}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </StaggerContainer>
 
                 {/* MODAL (Sin cambios, funciona igual) */}
                 <Modal

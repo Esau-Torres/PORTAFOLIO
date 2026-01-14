@@ -5,6 +5,7 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import LanguageSwitcher from './LanguageSwitcher';
 import style from '../../styles/layout.module.css';
 import { useRef } from 'react';
+import AnimatedButton from '../animation/AnimatedButton';
 
 export default function Header() {
     const t = useTranslations('Navbar');
@@ -12,7 +13,7 @@ export default function Header() {
     const navbarCollapseRef = useRef<HTMLDivElement>(null);
     const navbarTogglerRef = useRef<HTMLButtonElement>(null);
 
-   const closeMenu = () => {
+    const closeMenu = () => {
         if (navbarCollapseRef.current && navbarTogglerRef.current) {
             if (navbarCollapseRef.current.classList.contains('show')) {
                 navbarTogglerRef.current.click();
@@ -25,7 +26,7 @@ export default function Header() {
             <Container>
                 {/* BRAND */}
                 <Navbar.Brand
-                    href={`/${locale}`}className={`${style['brand-email']} ${style.animate} text-light z-3 position-relative`}>
+                    href={`/${locale}`} className={`${style['brand-email']} ${style.animate} text-light z-3 position-relative`}>
                     {"davidesau140@gmail.com".split("").map((char, index) => (
                         <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
                             {char}
@@ -34,7 +35,7 @@ export default function Header() {
                 </Navbar.Brand>
 
                 {/* TOGGLE */}
-                <Navbar.Toggle ref={navbarTogglerRef} aria-controls="basic-navbar-nav" className="border-0 focus-ring-0 z-3"/>
+                <Navbar.Toggle ref={navbarTogglerRef} aria-controls="basic-navbar-nav" className="border-0 focus-ring-0 z-3" />
 
                 {/* COLLAPSE */}
                 <Navbar.Collapse ref={navbarCollapseRef} id="basic-navbar-nav">
@@ -42,12 +43,12 @@ export default function Header() {
                     <button className={style['menu-close-btn']} onClick={closeMenu} aria-label="Cerrar menú"></button>
 
                     <Nav className="ms-auto gap-4 align-items-center text-center w-100 justify-content-end">
-                        <Nav.Link 
+                        <Nav.Link
                             href={`/${locale}`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}>{t('home')}
                         </Nav.Link>
-                        <Nav.Link 
+                        <Nav.Link
                             href={`/${locale}/about`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}>{t('about')}</Nav.Link>
-                        <Nav.Link 
+                        <Nav.Link
                             href={`/${locale}/proyectos`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}> {t('projects')}
                         </Nav.Link>
                     </Nav>
@@ -58,11 +59,11 @@ export default function Header() {
                     {/* ACTIONS */}
                     <div className={`${style['actions-container']} ms-lg-4 d-flex flex-column-reverse flex-lg-row align-items-center gap-4 mt-5 mt-lg-0`}>
                         <LanguageSwitcher onLanguageSelect={closeMenu} />
-                        
-                        <Button 
-                            className={`${style['btn-neon-pg']} rounded-pill px-4 py-2 py-lg-2 `} onClick={closeMenu}>
+
+                        <AnimatedButton className={`${style['btn-neon-pg']} btn btn-black rounded-pill fw-bold  px-4 py-2 py-lg-2`} delay={0.1} onClick={() => { closeMenu }}>
                             {t('download_cv')}
-                        </Button>
+                        </AnimatedButton>
+
                     </div>
                 </Navbar.Collapse>
             </Container>

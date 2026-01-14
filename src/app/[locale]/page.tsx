@@ -10,7 +10,6 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'use-intl';
 import { motion } from "framer-motion"; // Importa motion desde framer-motion (annimaciones)
 
-import TypewriterReveal from './components/animation/TypewriterReveal';
 import StaggerContainer, { cardVariants } from './components/animation/StaggerContainer';
 import AnimatedButton from './components/animation/AnimatedButton';
 
@@ -41,15 +40,15 @@ export default function Home() {
 
               <div className={`${styles['btn-space']} d-flex gap-3 mt-4 justify-content-center justify-content-md-start`}>
                 <Link href={`/${locale}/proyectos`} className="text-decoration-none">
-                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-light rounded-3 px-4 fw-bold`} delay={1} onClick={() => {}}>
-                        {t('txt4')}
-                    </AnimatedButton>
+                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-black rounded-3 px-4 fw-bold`} delay={1} onClick={() => { }}>
+                    {t('txt4')}
+                  </AnimatedButton>
                 </Link>
 
                 <Link href={`/${locale}/about`} className="text-decoration-none">
-                  <AnimatedButton className={`${styles['btn-neon-pg']} btn btn-light rounded-3 px-4`} delay={1.1} onClick={() => {}}>
-                        {t('txt5')}
-                    </AnimatedButton>
+                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-light rounded-3 text-black px-4`} delay={1.1} onClick={() => { }}>
+                    {t('txt5')}
+                  </AnimatedButton>
                 </Link>
               </div>
             </div>
@@ -74,139 +73,153 @@ export default function Home() {
 
       <section className={styles.bloque2}>
         <Container>
-          <h1 className={`${styles.title} text-center mb-5 mt-4 fw-bold`} >{t('ttl2')}</h1>
-          <div className="row g-3 g-md-4">
+          <AscendWords text={t('ttl2')} className={`${styles.title} text-center justify-content-center mb-5 mt-4 fw-bold`} />
+
+
+          <StaggerContainer className="row g-3 g-md-4">
 
             {/* CARD 1 */}
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faPalette} /></div>
                 <h3 className={styles.cardTitle}> {t('ttl3')} </h3>
                 <p className={styles.cardText}>{t('txt6')}</p>
-                <Link href="/es/proyectos" className={styles.cardLink}> {t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/proyectos`} className={styles.cardLink}> {t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* CARD 2 */}
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faLaptopCode} /></div>
                 <h3 className={styles.cardTitle}>Frontend</h3>
                 <p className={styles.cardText}>{t('txt8')}</p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* CARD 3 */}
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faDatabase} /></div>
                 <h3 className={styles.cardTitle}>{t('ttl4')}</h3>
                 <p className={styles.cardText}>{t('txt9')}</p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* CARD 4 */}
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faServer} /></div>
                 <h3 className={styles.cardTitle}>Backend</h3>
                 <p className={styles.cardText}> {t('txt10')} </p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Repite la estructura col-6 para el resto de cards... */}
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faRocket} /></div>
                 <h3 className={styles.cardTitle}>SEO</h3>
                 <p className={styles.cardText}>{t('txt11')}</p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faCode} /></div>
                 <h3 className={styles.cardTitle}> {t('ttl5')} </h3>
                 <p className={styles.cardText}> {t('txt12')} </p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faCodeCompare} /></div>
                 <h3 className={styles.cardTitle}>Frameworks</h3>
                 <p className={styles.cardText}>.NET, Spring Boot, NestJS.</p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="col-6 col-md-6 col-lg-3">
+            <motion.div className="col-6 col-md-6 col-lg-3" variants={cardVariants}>
               <div className={styles.cardCustom}>
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faDesktop} /></div>
                 <h3 className={styles.cardTitle}>{t('ttl6')}</h3>
                 <p className={styles.cardText}>Bootstrap, Tailwind, Bulma.</p>
                 <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </StaggerContainer>
         </Container>
       </section>
 
       <section className={styles.bloque3}>
         <Container>
-          <h1 className={`${styles.title} text-center mb-5 mt-4 fw-bold`} >{t('ttl7')}</h1>
+
+          <AscendWords text={t('ttl7')} className={`${styles.title} justify-content-center mb-5  fw-bold`} />
+
           <div className="row align-items-center">
             <div className="col-12 col-md-4 order-1 order-md-1 d-flex flex-column justify-content-center gap-3">
 
               <div className={`${styles.block1} row py-3 border-top border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt13')}</p>
+
+                  <ShiftWords text={t('txt13')} className={styles.desciption} delay={0.2} />
                 </div>
               </div>
               <div className={`${styles.block1} row py-3 border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt14')}</p>
+
+                  <ShiftWords text={t('txt14')} className={styles.desciption} delay={0.4} />
+
                 </div>
               </div>
               <div className={`${styles.block1} row py-3 border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt15')}</p>
+
+                  <ShiftWords text={t('txt15')} className={styles.desciption} delay={0.6} />
+
                 </div>
               </div>
             </div>
 
-            <div className="col-12 col-md-4 order-2 order-md-2 d-flex justify-content-center align-items-center">
+            <motion.div
+              className="col-12 col-md-4 order-2 order-md-2 d-flex justify-content-center align-items-center"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2, type: "spring", ease: "easeInOut" }}>
+            
               <Image
                 src="/images/bloque3.png"
                 alt="Foto de perfil"
                 width={900}
                 height={900}
                 className={styles.imageContent}
-                priority
-              />
-            </div>
+                priority />
+            </motion.div>
 
             {/* COLUMNA DERECHA */}
             <div className="col-12 col-md-4 order-3 order-md-3 d-flex flex-column justify-content-center gap-3">
               <div className={`${styles.block1} row py-3 border-top border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt16')}</p>
+                  <ShiftWords text={t('txt16')} className={styles.desciption} delay={0.2} />
                 </div>
               </div>
               <div className={`${styles.block1} row py-3 border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt17')}</p>
+                  <ShiftWords text={t('txt17')} className={styles.desciption} delay={0.4} />
                 </div>
               </div>
               <div className={`${styles.block1} row py-3 border-bottom border-secondary-subtle`}>
                 <div className="col-12 d-flex justify-content-center align-items-center">
-                  <p className={styles.desciption}>{t('txt18')}</p>
+                  <ShiftWords text={t('txt18')} className={styles.desciption} delay={0.6} />
                 </div>
               </div>
             </div>

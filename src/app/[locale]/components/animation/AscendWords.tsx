@@ -53,7 +53,7 @@ export default function AscendWords({ text, className, delay = 0 }: Props) {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4em' }} // Gap para separar palabras
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '0.2em' }} // Gap para separar palabras
         >
             {text.split(" ").map((word, index) => (
                 // Wrapper para el efecto de máscara (overflow hidden)

@@ -34,7 +34,6 @@
 
 .btn-neon-pg {
     position: relative;
-    background-color: transparent;
     color: white;
     border: 2px solid #ffffff;
     font-weight: 600;
@@ -45,7 +44,7 @@
 }
 
 .btn-neon-pg:hover {
-    background-color: white;
+    background: #ffffff;
     color: black !important;
     border-color: white;
     box-shadow: -5px 0px 30px rgba(138, 0, 255, 0.9),

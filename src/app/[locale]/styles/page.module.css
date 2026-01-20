@@ -63,8 +63,34 @@
 }
 
 .image-one {
-    filter: drop-shadow(20px 0 7px #d6dcec);
+    filter: drop-shadow(10px 0 4px #d6dcec);
     transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-mask-container {
+    position: relative;
+    width: 100%;
+    /* Definimos el ancho máximo aquí en lugar de en línea en el HTML */
+    max-width: 600px;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+    .image-mask-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: scale(1.2);
+
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
 }
 
 /* --- RESPONSIVIDAD (MÓVIL) --- */
@@ -98,10 +124,23 @@
         font-size: 0.9rem;
     }
 
-    .image-one {
-        width: 80% !important;
-        height: auto;
+    .image-mask-container {
+        width: 100% !important;
+        
+        /* ESCALA: Aumentamos un 15% el tamaño visual */
+        transform: scale(1.15); 
+        
+        /* Margen extra abajo para compensar el crecimiento */
+        
         margin-bottom: 1rem;
+        /* Máscara ajustada */
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+
+    .image-one {
+        height: auto;
+       
     }
 
     .btn-space {

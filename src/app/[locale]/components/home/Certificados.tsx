@@ -26,7 +26,7 @@ export default function Certificados() {
         {
             id: 2,
             title: t('components.certificados.ttl2'),
-            src: "/images/certificado2.png",
+            src: "/images/certificado02.png",
         },
         {
             id: 3,

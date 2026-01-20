@@ -58,13 +58,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.8, type: "spring" }}>
-              <Image
-                src="/images/foto1.png"
-                alt="Descripción de la imagen"
-                width={500}
-                height={300}
-                className={`${styles['image-about2']} img-fluid card-img-top`}
-                style={{ maxWidth: '400px' }} />
+              <div className={styles['image-mask-container']}>
+                <Image
+                  src="/images/foto01.png"
+                  alt="Descripción de la imagen"
+                  width={500}
+                  height={300}
+                  className={`${styles['image-one']} img-fluid w-100`} />
+              </div>
             </motion.div>
           </div>
           <div className={styles.circulo1}></div>
@@ -195,7 +196,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 1.2, type: "spring", ease: "easeInOut" }}>
-            
+
               <Image
                 src="/images/bloque3.png"
                 alt="Foto de perfil"

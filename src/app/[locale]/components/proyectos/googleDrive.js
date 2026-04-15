@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons'; 
+import p from '../../../assets/styles/page.module.css';
 import { useTranslations } from 'use-intl';
 
 export default function GoogleVideo({ src, title = "Video", showThumbnail = false }) {
@@ -12,7 +13,7 @@ export default function GoogleVideo({ src, title = "Video", showThumbnail = fals
 
     const videoId = getYouTubeId(src);
 
-    if (!videoId) return <p className="text-danger">{t('ttl1')}</p>;
+    if (!videoId) return <p className={`${p.title} text-danger`}>{t('ttl1')}</p>;
 
     if (showThumbnail) {
         return (
@@ -58,7 +59,7 @@ export default function GoogleVideo({ src, title = "Video", showThumbnail = fals
             paddingBottom: '56.25%',
             height: 0,
             overflow: 'hidden',
-            borderRadius: '15px',
+            borderRadius: '15px',           
             boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
             border: '1px solid rgba(255,255,255,0.1)',
             backgroundColor: '#000000'
@@ -76,6 +77,7 @@ export default function GoogleVideo({ src, title = "Video", showThumbnail = fals
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title={title}
+
             ></iframe>
         </div>
     );

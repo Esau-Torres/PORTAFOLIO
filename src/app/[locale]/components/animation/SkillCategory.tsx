@@ -1,7 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
-import styles from "../../styles/About.module.css";
+import styles from "../../../assets/styles/About.module.css";
 import AscendWords from '../animation/AscendWords'; 
 import StaggerContainer from '../animation/StaggerContainer'; 
 

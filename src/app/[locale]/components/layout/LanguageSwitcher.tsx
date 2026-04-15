@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslations } from 'next-intl';
-import style from '../../styles/layout.module.css';
+import style from '../../../assets/styles/layout.module.css';
 
 export default function LanguageSwitcher({ onLanguageSelect }: { onLanguageSelect?: (locale: string) => void }) {
     const t = useTranslations('Navbar');

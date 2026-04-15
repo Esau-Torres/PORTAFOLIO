@@ -1,7 +1,6 @@
 .brand-email {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-SpecialGothicExpandedOne), Courier, monospace;
     font-weight: bold;
-    letter-spacing: -1px;
 }
 
 .animate span {
@@ -36,7 +35,8 @@
     position: relative;
     color: white;
     border: 2px solid #ffffff;
-    font-weight: 600;
+    padding: 1rem 3rem;
+    font-family: var(--font-Inter), sans-serif;
     box-shadow: -3px 0px 15px rgba(138, 0, 255, 0.9),
         3px 0px 15px rgba(130, 255, 6, 0.9),
         inset 0 0 10px rgba(255, 255, 255, 0.1);
@@ -55,53 +55,60 @@
     display: none;
 }
 
-    .navlink {
-        font-size: 1rem !important;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 0.8) !important;
-        text-align: center;
-        padding: 0.5rem 1rem !important;
-        margin: 0.25rem 0;
-        border-radius: 8px;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        position: relative;
-    }
+.navlink {
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-align: center;
+    padding: 0.5rem 1rem !important;
+    margin: 0.25rem 0;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
 
-    .navlink:hover {
-        color: white !important;
-        transform: translatey(-5px);
-    }
+.navlink:hover {
+    color: white !important;
+    transform: translatey(-5px);
+}
 
-    .navlink::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #6d6d6d, #c4c4c4);
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        transform: translateX(-50%);
-    }
+.navlink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6d6d6d, #c4c4c4);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(-50%);
+}
 
-    .navlink:hover::after {
-        width: 60%;
-    }
+.navlink:hover::after {
+    width: 60%;
+}
 
-    .navlink::after,
-    .navlink:hover::after {
-        transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
+.navlink::after,
+.navlink:hover::after {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-    .scale-on-hover {
-        transition: transform 0.3s ease;
-    }
+.scale-on-hover {
+    font-family: var(--font-Inter), sans-serif;
+    transition: transform 0.3s ease;
+}
 
-    .scale-on-hover:hover {
-        transform: translateY(-5px);
-    }
+.scale-on-hover:hover {
+    transform: translateY(-5px);
+}
 
 @media (max-width: 991px) {
+    .brand-email {
+        font-size: 1.1rem;
+        letter-spacing: 0rem;
+        line-height: 0.5rem;
+    }
+
     :global(.navbar-collapse) {
         position: fixed;
         top: 0;
@@ -164,18 +171,11 @@
         padding: 0 2rem;
     }
 
-    :global(.btn-neon-pg) {
-        width: 100%;
-        max-width: 240px;
-        font-size: 1rem !important;
-        padding: 0.8rem 1.5rem !important;
-    }
-
     /* Separador visual */
     :global(.nav-separator) {
         width: 80%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         margin: 1rem 0;
     }
 
@@ -196,7 +196,7 @@
         transition: all 0.3s ease;
         z-index: 1060;
         backdrop-filter: blur(5px);
-        
+
         /* Animación de entrada */
         opacity: 0;
         transform: scale(0.8);
@@ -206,6 +206,7 @@
         opacity: 1;
         transform: scale(1);
     }
+
     .menu-close-btn:hover {
         background: rgba(255, 255, 255, 0.2);
         transform: scale(1.1) rotate(90deg);
@@ -215,9 +216,17 @@
         content: '×';
         font-size: 2rem;
         line-height: 0;
-        padding-bottom: 4px; 
+        padding-bottom: 4px;
     }
+    .btn-neon-pg {
+        width: 100%;
+        padding: 1rem 2rem !important;
+        max-width: 240px;
+        font-size: 1rem !important;
+    }
+
 }
+
 
 :global(.navbar-toggler) {
     z-index: 1060;

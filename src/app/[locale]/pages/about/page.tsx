@@ -1,15 +1,15 @@
 'use client';
-import styles from "../styles/About.module.css";
+import styles from "../../../assets/styles/About.module.css";
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import { useTranslations } from 'use-intl';
 
-import SkillCategory from '../components/animation/SkillCategory';
-import AscendWords from '../components/animation/AscendWords';
-import ShiftWords from '../components/animation/ShiftWords';
-import Reveal from '../components/animation/Reveal';
+import SkillCategory from '../../components/animation/SkillCategory';
+import AscendWords from '../../components/animation/AscendWords';
+import ShiftWords from '../../components/animation/ShiftWords';
+import Reveal from '../../components/animation/Reveal';
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -38,7 +38,11 @@ export default function About() {
         email: 'davidesau140@gmail.com',
         location: 'San Salvador'
     };
-
+    const contactLinks: { [key: string]: string } = {
+        phone: `https://wa.me/503${contactInfo.phone.replace(/-/g, '')}`,
+        email: `mailto:${contactInfo.email}`,
+        location: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.location)}`
+    };
     const faIcon: { [key: string]: any } = {
         phone: faPhone,
         email: faEnvelope,
@@ -51,9 +55,16 @@ export default function About() {
                 <div className="h-100 w-100 d-flex align-items-end p-3 p-md-5">
 
                     <div className={styles.contactInfo}>
-                    
+
                         {Object.entries(contactInfo).map(([key, value], index) => (
-                            <div key={key} className={styles.contactItem}>
+                            <a
+                                href={contactLinks[key]}
+                                key={key}
+                                className={styles.contactItem}
+                                target={key !== 'email' ? "_blank" : "_self"}
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}
+                            >
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -62,7 +73,7 @@ export default function About() {
                                     <FontAwesomeIcon icon={faIcon[key]} style={{ color: 'rgba(138, 136, 136, 0.72)' }} />
                                 </motion.div>
                                 <ShiftWords text={value} delay={0.5 + index * 0.1} />
-                            </div>
+                            </a>
                         ))}
 
                     </div>

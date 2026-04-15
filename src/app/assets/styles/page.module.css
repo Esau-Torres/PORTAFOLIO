@@ -38,16 +38,16 @@
 /* --- ESTILOS DE TEXTO --- */
 .title {
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 300;
     color: #c7c7c6;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--font-SpecialGothicExpandedOne), serif;
     text-align: left;
 }
 
 .desciption {
     font-size: 1.2rem;
     color: #b4b4b3;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-Inter), sans-serif;
     margin-top: 0.5rem;
     display: block;
     text-align: left;
@@ -56,7 +56,7 @@
 .content {
     color: #a1a1a0;
     font-size: 1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-Inter), sans-serif;
     margin-top: 0.5rem;
     line-height: 1.6;
     text-align: justify;
@@ -140,7 +140,6 @@
 
     .image-one {
         height: auto;
-       
     }
 
     .btn-space {
@@ -233,7 +232,7 @@
 }
 
 .cardTitle {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--font-SpecialGothicExpandedOne), Times, serif;
     font-weight: 800;
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
@@ -241,7 +240,7 @@
 }
 
 .cardText {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-Inter), sans-serif;
     font-size: 0.95rem;
     color: #a1a1a0;
     line-height: 1.6;
@@ -250,6 +249,7 @@
 
 .cardLink {
     text-decoration: none;
+    font-family: var(--font-Inter), sans-serif;
     font-weight: bold;
     color: #727271;
     position: relative;
@@ -417,7 +417,7 @@
 
 /* Título del certificado */
 .cardcertificado {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--font-Inter), Times, serif;
     font-weight: 700;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;

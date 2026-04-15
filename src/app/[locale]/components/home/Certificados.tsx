@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from "../../styles/page.module.css";
+import styles from "../../../assets/styles/page.module.css";
 import { Container, Modal } from 'react-bootstrap';
 import Image from 'next/image';
 import { useTranslations } from 'use-intl';

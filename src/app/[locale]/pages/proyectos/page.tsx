@@ -1,17 +1,17 @@
 'use client';
 import { useState } from 'react';
-import s1 from "../styles/Proyectos.module.css"
-import s2 from "../styles/page.module.css";
+import s1 from "../../../assets/styles/Proyectos.module.css"
+import s2 from "../../../assets/styles/page.module.css";
 import { Container, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faCode, faLayerGroup, faShieldHalved, faServer } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import GoogleVideo from '../components/proyectos/googleDrive';
+import GoogleVideo from '../../components/proyectos/googleDrive';
 import { useTranslations } from 'use-intl';
 
-import StaggerContainer, { cardVariants } from '../components/animation/StaggerContainer';
-import AscendWords from '../components/animation/AscendWords';
-import ShiftWords from '../components/animation/ShiftWords';
+import StaggerContainer, { cardVariants } from '../../components/animation/StaggerContainer';
+import AscendWords from '../../components/animation/AscendWords';
+import ShiftWords from '../../components/animation/ShiftWords';
 import { motion, cubicBezier } from "framer-motion";
 
 interface Project {
@@ -40,14 +40,14 @@ interface Project {
             <div className={s1.techCard}>
                 <div className={s1.techIcon}>
                     <FontAwesomeIcon icon={icon} />
-                    <h3 className={s2.desciption}>{title}</h3>
+                    <h3 className={s1.title}>{title}</h3>
                 </div>
                 <p className={s2.content}>
                     {children}
                 </p>
             </div>
         </motion.div>
-    );
+    ); 
 
 export default function Proyectos() {
     const t = useTranslations('proyectos');
@@ -111,7 +111,7 @@ export default function Proyectos() {
                                             showThumbnail={true} />
 
                                         <div className={s1.overlay}>
-                                            <span>{t('txt5')} <FontAwesomeIcon icon={faEye} /></span>
+                                            <span className={s2.title}>{t('txt5')} <FontAwesomeIcon icon={faEye} /></span>
                                         </div>
                                     </div>
 
@@ -147,7 +147,7 @@ export default function Proyectos() {
 
                                         <div className="col-12 col-lg-4 p-4 d-flex flex-column justify-content-center">
                                             <Modal.Header closeButton className="border-0" style={{ position: 'absolute', top: '0', right: '0' }} data-bs-theme="dark"></Modal.Header>
-                                            <h2 className="fw-bold mb-4" style={{ color: '#ececec' }}>
+                                            <h2 className={`${s2.title} fw-bold mb-4`} style={{ color: '#ececec' }}>
                                                 {selectedProject.title}
                                             </h2>
                                             <div className={s1.scrollableContent}>

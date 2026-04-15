@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import LanguageSwitcher from './LanguageSwitcher';
-import style from '../../styles/layout.module.css';
+import style from '../../../assets/styles/layout.module.css';
 import { useRef } from 'react';
 import AnimatedButton from '../animation/AnimatedButton';
 
@@ -47,9 +47,9 @@ export default function Header() {
                             href={`/${locale}`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}>{t('home')}
                         </Nav.Link>
                         <Nav.Link
-                            href={`/${locale}/about`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}>{t('about')}</Nav.Link>
+                            href={`/${locale}/pages/about`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}>{t('about')}</Nav.Link>
                         <Nav.Link
-                            href={`/${locale}/proyectos`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}> {t('projects')}
+                            href={`/${locale}/pages/proyectos`} className={`${style.navlink} px-0 text-white`} onClick={closeMenu}> {t('projects')}
                         </Nav.Link>
                     </Nav>
 

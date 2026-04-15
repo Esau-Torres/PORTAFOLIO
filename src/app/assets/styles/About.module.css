@@ -54,6 +54,7 @@
     backdrop-filter: blur(4px);
     color: white;
     font-size: 0.9rem;
+    font-family: var(--font-Inter), sans-serif;
     transition: background 0.3s;
 }
 
@@ -73,14 +74,14 @@
     font-size: 2.5rem;
     font-weight: bold;
     color: #c7c7c6;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:  var(--font-SpecialGothicExpandedOne), serif;
     text-align: left;
 }
 
 .parrafo {
     color: #a1a1a0;
     font-size: 1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-Inter), sans-serif;
     margin-top: 0.5rem;
     line-height: 1.6;
     text-align: left;
@@ -138,7 +139,7 @@
 .tagtext {
     font-size: 1.2rem;
     color: #b4b4b3;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-Inter), sans-serif;
 }
 
 .vineta {

@@ -1,6 +1,6 @@
 'use client';
-import styles from "./styles/page.module.css";
-import style from './styles/layout.module.css';
+import styles from "../assets/styles/page.module.css";
+import style from '../assets/styles/layout.module.css';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPalette, faLaptopCode, faServer, faRocket, faCode, faDatabase, faCodeCompare, faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -30,23 +30,21 @@ export default function Home() {
 
               <AscendWords text={t('ttl1')} className={styles.title} />
 
-              <ShiftWords text={t('txt1')} className={styles.desciption} delay={0.5} />
-
               <Reveal delay={0.9}>
-                <p className={`${styles.content} mt-4`}>
+                <p className={`${styles.content} mt-5`}>
                   <strong className="text-white"> {t('txt2')} </strong> {t('txt3')}
                 </p>
               </Reveal>
 
-              <div className={`${styles['btn-space']} d-flex gap-3 mt-4 justify-content-center justify-content-md-start`}>
-                <Link href={`/${locale}/proyectos`} className="text-decoration-none">
-                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-black rounded-3 px-4 fw-bold`} delay={1} onClick={() => { }}>
+              <div className={`${styles['btn-space']} d-flex gap-4 mt-5 justify-content-center justify-content-md-start`}>
+                <Link href={`/${locale}/pages/proyectos`} className="text-decoration-none">
+                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-black rounded-4 fw-bold`} delay={1} onClick={() => { }}>
                     {t('txt4')}
                   </AnimatedButton>
                 </Link>
 
-                <Link href={`/${locale}/about`} className="text-decoration-none">
-                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-light rounded-3 text-black px-4`} delay={1.1} onClick={() => { }}>
+                <Link href={`/${locale}/pages/about`} className="text-decoration-none">
+                  <AnimatedButton className={`${style['btn-neon-pg']} btn btn-light rounded-4 text-black`} delay={1.1} onClick={() => { }}>
                     {t('txt5')}
                   </AnimatedButton>
                 </Link>
@@ -85,7 +83,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faPalette} /></div>
                 <h3 className={styles.cardTitle}> {t('ttl3')} </h3>
                 <p className={styles.cardText}>{t('txt6')}</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}> {t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}> {t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -95,7 +93,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faLaptopCode} /></div>
                 <h3 className={styles.cardTitle}>Frontend</h3>
                 <p className={styles.cardText}>{t('txt8')}</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -105,7 +103,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faDatabase} /></div>
                 <h3 className={styles.cardTitle}>{t('ttl4')}</h3>
                 <p className={styles.cardText}>{t('txt9')}</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -115,7 +113,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faServer} /></div>
                 <h3 className={styles.cardTitle}>Backend</h3>
                 <p className={styles.cardText}> {t('txt10')} </p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -125,7 +123,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faRocket} /></div>
                 <h3 className={styles.cardTitle}>SEO</h3>
                 <p className={styles.cardText}>{t('txt11')}</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -134,7 +132,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faCode} /></div>
                 <h3 className={styles.cardTitle}> {t('ttl5')} </h3>
                 <p className={styles.cardText}> {t('txt12')} </p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -143,7 +141,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faCodeCompare} /></div>
                 <h3 className={styles.cardTitle}>Frameworks</h3>
                 <p className={styles.cardText}>.NET, Spring Boot, NestJS.</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
@@ -152,7 +150,7 @@ export default function Home() {
                 <div className={styles.iconBox}><FontAwesomeIcon icon={faDesktop} /></div>
                 <h3 className={styles.cardTitle}>{t('ttl6')}</h3>
                 <p className={styles.cardText}>Bootstrap, Tailwind, Bulma.</p>
-                <Link href={`/${locale}/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
+                <Link href={`/${locale}/pages/proyectos`} className={styles.cardLink}>{t('txt7')} &rarr;</Link>
               </div>
             </motion.div>
 
